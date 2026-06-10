@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculatrice</title>
+
+  <style>
+    
+    body {
+      font-family: Arial;
+      display: flex;
+      flex-direction: column;   /* ✅ IMPORTANT */
+      align-items: center;      /* centre horizontalement */
+      justify-content: center;  /* centre verticalement */
+      height: 100vh;
+    }
+
+
+    .calculator {
+      border: 2px solid #be1bdf;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+    }
+
+    #display {
+      width: 90%;
+      height: 60px;
+      text-align: left;
+      font-size: 20px;
+      margin-bottom: 15px;
+      padding: 5px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      border: 2px solid #be1bdf;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .operator {
+      background-color: #a35b91;
+    }
+
+    .equal {
+      background-color: #e75d92;
+    }
+
+    .clear {
+      background-color: #e000a8;
+    }
+
+    .back {
+      margin-top: 15px;
+      display: block;
+      text-decoration: none;
+      color: blue;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <h2 style="text-align:center; margin-top:30px;">
+    🧮 Calculatrice
+  </h2>
+
+<div class="calculator">
+
+  <!-- écran -->
+  <input id="display" name="display" readonly>
+
+  <!-- boutons -->
+  <div class="buttons">
+    <button id="btn-7" onclick="press('7')">7</button>
+    <button id="btn-8" onclick="press('8')">8</button>
+    <button id="btn-9" onclick="press('9')">9</button>
+    <button id="btn-div" class="operator" onclick="press('/')">/</button>
+
+    <button id="btn-4" onclick="press('4')">4</button>
+    <button id="btn-5" onclick="press('5')">5</button>
+    <button id="btn-6" onclick="press('6')">6</button>
+    <button id="btn-mul" class="operator" onclick="press('*')">*</button>
+
+    <button id="btn-1" onclick="press('1')">1</button>
+    <button id="btn-2" onclick="press('2')">2</button>
+    <button id="btn-3" onclick="press('3')">3</button>
+    <button id="btn-sub" class="operator" onclick="press('-')">-</button>
+
+    <button id="btn-0" onclick="press('0')">0</button>
+    <button id="btn-dot" onclick="press('.')">.</button>
+    <button id="myheart" onclick="press('❤️')">❤️</button>
+    <button id="btn-add" class="operator" onclick="press('+')">+</button>
+
+    <button id="btn-equals" class="equal" onclick="calculate()" style="grid-column: span 4;"> 
+      = 
+    </button>
+    <button id="btn-clear" class="clear" onclick="clearDisplay()" style="grid-column: span 4;">
+      C
+    </button>
+
+
+  </div>
+
+  <!-- retour -->
+  <a href="../index.html" style="display:block; margin-top:20px; color:blue;">
+  ⬅ Retour à l'accueil
+  </a>
+
+</div>
+
+<p id="love-message" style="display:none; margin-top:15px; color:#e967b3; font-weight:bold;">
+  💡 5 2 0 se lit "wo - ai - ni" (我爱你) en chinois, ce qui signifie aussi: "je t’aime" ❤️
+</p>
+
+<script>
+  function press(value) {
+    document.getElementById("display").value += value;
+  }
+
+function calculate() {
+  let display = document.getElementById("display");
+  let value = display.value;
+  let message = document.getElementById("love-message");
+
+  // cacher message par défaut
+  message.style.display = "none";
+
+  // ❤️ → 520
+  if (value === "❤️") {
+    display.value = "520";
+    message.style.display = "block";
+    return;
+  }
+
+  // 520 → ❤️
+  if (value === "520") {
+    display.value = "❤️";
+    message.style.display = "block";
+    return;
+  }
+
+  try {
+    let result = eval(value);
+
+    // ✅ NOUVEAU : si résultat = 520
+    if (result === 520) {
+      display.value = "❤️";
+      message.style.display = "block";
+    } else {
+      display.value = result;
+    }
+
+  } catch {
+    display.value = "Erreur";
+  }
+}
+
+  function clearDisplay() {
+    document.getElementById("display").value = "";
+    document.getElementById("love-message").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
+
+<!-- ✅ ❤️ = 520 + message affiché
+✅ 520 = ❤️ + message affiché
+✅ Bouton C → efface tout + cache le message
+✅ Un nouveau = → reset message si pas cœur 
+"=" si vide: undefined
+chiffre operation (+/-x) coeur = erreur 
+
+-->

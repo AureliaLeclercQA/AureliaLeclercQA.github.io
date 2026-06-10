@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QA Automation Demo - Aurélia</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 20px;
+    }
+
+    header img {
+      height: 60px;
+      vertical-align: middle;
+    }
+
+    nav a {
+      color: #93c5fd;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .description {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .card {
+      border: 2px solid #ccc;
+      padding: 20px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      background: #f3f4f6;
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .app-container {
+      margin-top: 20px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .card.disabled {
+      background-color: #e5e7eb;
+      color: #9ca3af;
+      cursor: not-allowed;
+      position: relative;
+    }
+
+    .card.disabled:hover {
+      transform: none;
+      background-color: #e5e7eb;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="./sources/logo_github.png" alt="logo"> 
+  <h1>QA Automation Demo</h1>
+
+  <nav>
+    <a href="https://github.com/LeclercAureliaQA">GitHub Repo</a>
+    <a href="./sources/StrategieEtMiseEnPlaceAutomSurProjet-IA.pdf">Stratégie QA (PDF)</a>
+  </nav>
+</header>
+
+<!-- DESCRIPTION -->
+<div class="description">
+  
+  <h3>
+    Ce site regroupe plusieurs éléments autour de l’automatisation des tests :
+  </h3>
+
+  <ul style="text-align:left; max-width:600px; margin:auto;">
+    <li>🧩 Des <strong>mini applications interactives</strong> à tester. </li>
+    <li>🤖 Le <strong>test automatisé</strong> de ces applications. </li>
+    <li>🧠 Une réflexion sur le potentiel des <strong>assistants IA</strong> dans les 
+      tests automatisés et manuels. </li>
+  </ul>
+  
+  <br>
+  <br>
+
+  <i>
+    L’objectif est de proposer ici une vitrine concrète, mêlant pratique, méthodologie et reflexions.  
+    Certaines applications sont encore en cours de développement… Et oui, on s'amuse quand on a le temps!
+  </i>
+
+</div>
+
+<!-- GRID -->
+<div class="grid">
+
+  <div class="card" onclick="window.location.href='./pages/calc.html'"> 🧮 Calculatrice ❤️</div>
+  <div class="card" onclick="window.location.href='./pages/guest.html'"> 🎉 Ma liste d'invités ❤️</div>
+
+  <div class="card disabled">🎲 Le dé de Dédé 🔒</div>
+  <!-- <div class="card">🔐 Login... logout</div> -->
+  <div class="card disabled">🗣️ QApipotron 🔒</div>
+  <!-- <div class="card">📊 Les bons comptes font les bons amis</div> -->
+</div>
+
+<!----------------------------------------------->
+
+<!-- SECTION TEST ROBOT -->
+<div class="description" id="robot-tests">
+
+  <h2>🤖 Tests automatisés - Robot Framework</h2>
+
+  <p>
+  🧮 Calculatrice :
+  </p>
+
+  <video id="robot-video" width="600" controls>
+    <source src="./sources/video_test.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+
+  <p>
+  🎉 Ma liste d'invités :
+  </p>
+
+  <video id="robot-video" width="600" controls>
+    <source src="./sources/video_test.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+</div>
+
+<!----------------------------------------------->
+
+<!-- SECTION IA -->
+<div class="description" id="place_ia">
+
+  <h2>🧠 La place de l'IA dans les tests automatisés et fonctionnels </h2>
+
+  Creer des minis scripts html pour faire des maquettes vivantes, à partir de specifications données par le client, afin de valider de quoi on parle.
+  Exemple: "En tant qu'utilisateur, je veux voir apparaitre un encart afin de saisir du texte pour ajouter un element a ma liste."
+  Demande Copilot: j'ai une demande du client: "En tant qu'utilisateur, je veux voir apparaitre un encart afin de saisir du texte pour ajouter un element a ma liste." -- anonymiser si besoin pour avoir juste un besoin en langage simple.
+  , donne moi un petit code htlm que j'incluerai dans un fichier .htlm dans le but de savoir si la disposition globale convient au client.
+  Resultat:
