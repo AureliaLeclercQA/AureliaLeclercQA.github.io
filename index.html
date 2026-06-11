@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>QA Automation Demo - Aurélia</title>
+  <title>PORTFOLIO</title>
 
   <style>
     body {
@@ -12,18 +12,21 @@
     }
 
     header {
-      background: #1f2937;
+      background: #8e507d;
       color: white;
       padding: 20px;
     }
 
     header img {
-      height: 60px;
+      height: 120px;
       vertical-align: middle;
+      border-radius: 50%;
+      object-fit: cover;
+      width: 120px;
     }
 
     nav a {
-      color: #93c5fd;
+      color: #1b0a57;
       margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
@@ -86,12 +89,15 @@
 
 <!-- HEADER -->
 <header>
-  <img src="./mini-app/sources/logo_github.png" alt="logo"> 
-  <h1>QA Automation Demo</h1>
+  <img src="./sources/logo_github.png" alt="logo"> 
+  <h1>Aurelia Leclerc QA</h1>
+  <h2>~ PORTFOLIO ~</h2>
+
 
   <nav>
-    <a href="https://github.com/LeclercAureliaQA">GitHub Repo</a>
-    <a href="./mini-app/sources/StrategieEtMiseEnPlaceAutomSurProjet-IA.pdf">Stratégie QA (PDF)</a>
+    <a href="https://github.com/LeclercAureliaQA">GitHub</a>
+    <a href="./sources/StrategieEtMiseEnPlaceAutomSurProjet-IA.pdf">Stratégie QA</a>
+    <a href="./sources/CV_LECLERC_Aurélia_0626.pdf">CV</a>
   </nav>
 </header>
 
@@ -102,7 +108,7 @@
     Ce site regroupe plusieurs éléments autour de l’automatisation des tests :
   </h3>
 
-  <ul style="text-align:left; max-width:600px; margin:auto;">
+  <ul style="text-align:left; max-width:800px; margin:auto;">
     <li>🧩 Des <strong>mini applications interactives</strong> à tester. </li>
     <li>🤖 Le <strong>test automatisé</strong> de ces applications. </li>
     <li>🧠 Une réflexion sur le potentiel des <strong>assistants IA</strong> dans les 
@@ -122,10 +128,10 @@
 <!-- GRID -->
 <div class="grid">
 
-  <div class="card" onclick="window.location.href='./mini-app/pages/calc.html'"> 🧮 Calculatrice ❤️</div>
-  <div class="card" onclick="window.location.href='./mini-app/pages/guest.html'"> 🎉 Ma liste d'invités ❤️</div>
+  <div class="card" onclick="window.location.href='./pages/calc.html'"> 🧮 Calculatrice ❤️</div>
+  <div class="card" onclick="window.location.href='./pages/guest.html'"> 🎉 Ma liste d'invités ❤️</div>
 
-  <div class="card disabled">🎲 Le dé de Dédé 🔒</div>
+  <div class="card" onclick="window.location.href='./pages/dede.html'">🎲 Le dé de Dédé 🐷</div>
   <!-- <div class="card">🔐 Login... logout</div> -->
   <div class="card disabled">🗣️ QApipotron 🔒</div>
   <!-- <div class="card">📊 Les bons comptes font les bons amis</div> -->
@@ -143,7 +149,7 @@
   </p>
 
   <video id="robot-video" width="600" controls>
-    <source src="./mini-app/sources/video_test.mp4" type="video/mp4">
+    <source src="./sources/video_test.mp4" type="video/mp4">
     Votre navigateur ne supporte pas la vidéo.
   </video>
 
@@ -152,7 +158,7 @@
   </p>
 
   <video id="robot-video" width="600" controls>
-    <source src="./mini-app/sources/video_test.mp4" type="video/mp4">
+    <source src="./sources/video_test.mp4" type="video/mp4">
     Votre navigateur ne supporte pas la vidéo.
   </video>
 </div>

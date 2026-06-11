@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎲 Le dé de Dédé 🐷</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      background: rgb(225, 227, 182);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 280px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #d866aa;
+      color: white;
+      margin-top: 15px;
+    }
+    button:hover {
+      background-color: #be1257;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 20px;
+      border: 2px solid #ff0095;
+      border-radius: 8px;
+      font-size: 32px;
+      font-weight: bold;
+      width: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #f9f9f9;
+      font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", Arial, sans-serif;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="container">
+    <h2>🎲 Le dé de Dédé 🐷</h2>
+    <button id="rollButton">Lancer</button>
+    <div id="result" class="result">?</div>
+    <div id="pigPreload" aria-hidden="true" style="position:absolute; opacity:0; width:0; height:0; overflow:hidden; pointer-events:none;">🐷</div>
+    
+  <!-- retour -->
+  <a href="../index.html" style="display:block; margin-top:20px; color:blue;">
+  ⬅ Retour à l'accueil
+  </a>
+
+  </div>
+
+  <script>
+    const button = document.getElementById('rollButton');
+    const resultBox = document.getElementById('result');
+
+    // Use pointerdown/touchstart to reduce delay between user action and result display
+    const showResult = () => {
+      const randomNumber = Math.floor(Math.random() * 6) + 1;
+      resultBox.textContent = randomNumber === 6 ? '🐷' : randomNumber;
+    };
+
+    // pointerdown covers mouse and touch; fallback to touchstart for older browsers
+    if (window.PointerEvent) {
+      button.addEventListener('pointerdown', showResult);
+    } else {
+      button.addEventListener('touchstart', showResult, {passive: true});
+    }
+  </script>
+</body>
+</html>
+
+
