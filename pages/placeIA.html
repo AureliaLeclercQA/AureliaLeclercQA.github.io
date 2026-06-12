@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Place de l'IA dans les tests automatisés et fonctionnels</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1, h2, h3 {
+            color: #c40ca8;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            overflow-x: auto;
+        }
+
+        .demo-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        button {
+            padding: 6px 12px;
+            margin-top: 10px;
+        }
+
+        #inputBox {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🧠 La place de l'IA dans les tests automatisés et fonctionnels </h1>
+
+<p>
+L’IA transforme progressivement les pratiques de test logiciel.
+Au-delà de l’automatisation classique, elle permet aujourd’hui de <strong>générer rapidement des maquettes interactives</strong>
+à partir de simples besoins exprimés en langage naturel.
+</p>
+
+<p>
+👉 L'IA renforce aussi un rôle clé du testeur: <strong>celui de facilitateur du projet</strong>.
+</p>
+
+<h2> Pour moi, le testeur est bien plus qu’un validateur.</h2>
+
+<p> Contrairement à une idée reçue, le testeur n’intervient pas uniquement à la fin. Il: </p>
+
+<ul>
+    <li> Analyse le besoin dès le départ. </li>
+    <li> Rédige des scénarios de test en amont. </li>
+    <li> Identifie des incohérences. </li>
+    <li> Propose des améliorations. </li>
+    <li> Anticipe les cas limites etc. </li>
+</ul>
+
+<p>
+👉 En réalité, <strong>écrire des tests, c’est déjà concevoir</strong>.
+</p>
+
+<h2>Exemple de coup d'un coup de pouce de l'IA 🤖 : la création de maquettes</h2>
+
+<p>
+Avec un assistant IA, on peut par exemple générer une maquette HTML pour valider rapidement :
+</p>
+
+<ul>
+    <li> La compréhension du besoin. </li>
+    <li> La disposition des éléments. </li>
+    <li> L’expérience utilisateur. </li>
+    <li> Les scénarios de test dès le départ. </strong></li>
+</ul>
+
+<p>
+👉 Ici, <strong>le test commence avant le développement</strong>. Et fini les bonnes vieilles maquettes sur Paint!
+</p>
+
+<h2> Pourquoi c’est puissant ?</h2>
+
+<p> Quand l'expression du besoin est exprimée de la façon suivante :</p>
+
+<pre>
+En tant qu'utilisateur, je veux pouvoir ajouter un élément à une liste via un encart.
+</pre>
+
+<p>
+On doit se projeter :
+</p>
+
+<ul>
+    <li> Où apparaît le champ ?</li>
+    <li> Quel comportement exact doit-il avoir ?</li>
+    <li> Que se passe-t-il si vide ?</li>
+</ul>
+
+<p>
+👉 Normalement, les critères d'acceptances sont là pour ça... Mais parfois il manques, et parfois… le texte seul ne suffit pas.
+</p>
+
+<h2> Et là: "Un schéma vaut mille mots", prend tout son sens. </h2>
+
+<ul>
+    <li> On fait des dessins. </li>
+    <li> On imagine des écrans. </li>
+    <li> On simule des interactions. </li>
+</ul>
+
+<p>
+    Le pouvoir de la maquette HTML, c'est qu'elle va encore plus loin : elle est <strong>interactive</strong>.
+</p>
+
+<h2> Si on reprend l'exemple concret énoncé plus haut : </h2>
+
+<p> Besoin :</p>
+
+<blockquote>
+"En tant qu'utilisateur, je veux ajouter un élément à une liste via un encart."
+</blockquote>
+
+<p> 
+    Je peux demander à un IA: "j'ai le besoin si dessus, peut tu me générer un maquette HTML répondant a ce besoin?".
+    On ajoute ensuite bien sur tous les détails qui nous parraissent nécéssaires sur le projet en respectant les règles de confidentialité, et on obtient une maquette interactive en quelques secondes comme celle présentée ci-dessous : 
+</p>
+
+
+<div class="demo-box">
+    <h3>Ma liste</h3>
+
+    <button onclick="toggleInput()">Ajouter un élément</button>
+
+    <div id="inputBox">
+        <input type="text" id="itemInput" placeholder="Entrer un élément">
+        <button onclick="addItem()">Valider</button>
+    </div>
+
+    <ul id="list"></ul>
+</div>
+
+<script>
+function toggleInput() {
+    const box = document.getElementById('inputBox');
+    box.style.display = box.style.display === 'none' ? 'block' : 'none';
+}
+
+function addItem() {
+    const input = document.getElementById('itemInput');
+    const value = input.value.trim();
+
+    if (value !== "") {
+        const li = document.createElement("li");
+        li.textContent = value;
+        document.getElementById("list").appendChild(li);
+        input.value = "";
+    }
+}
+</script>
+
+<h3> Ce que le testeur peut déjà valider : </h3>
+
+<ul>
+    <li> Affichage du champ au clic. </li>
+    <li> Ajout correct dans la liste. </li>
+    <li> Gestion du vide. </li>
+    <li> Expérience utilisateur. </li>
+</ul>
+
+<p>
+    Et surtout : il peut <strong>proposer des améliorations avant même que le développement commence</strong>.
+</p>
+
+<h2>🖼️ Alternative : génération de schéma avec IA</h2>
+
+<p>
+    On peut aussi générer un schéma avec un prompt :
+</p>
+
+<pre>
+"UX/UI simple montrant un bouton 'Ajouter', un champ de saisie qui apparaît,
+et une liste d'éléments en dessous, style wireframe"
+</pre>
+
+<p>
+    C'est utile aussi pour visualiser rapidement et glisser le schéma dans une conversation ou un commentaire de ticket… mais :
+</p>
+
+<ul>
+    <li>❌ Non interactif. </li>
+    <li>❌ Difficile à modifier (une génération d'image prend du temps et de la ressource). </li>
+</ul>
+
+<p>
+    L'avantage de la maquette c'est qu'il suffit de changer quelques lignes de code, et pour ça, pas besoin de relancer une IA → <strong>gain de temps et de ressources, car n'oublions pas, l'IA à un coût énergétique non négligeable ! </strong>.
+</p>
+
+<h2> Conclusion </h2>
+
+<p>
+L’IA ne sert pas seulement à générer du code.
+</p>
+
+<p>
+Elle permet aussi de :
+</p>
+
+<ul>
+    <li> Rendre les tests plus concrets. </li>
+    <li> Détecter plus tôt les problèmes. </li>
+    <li> Renforcer le rôle du testeur, et l'aider dans ses taches car oui... ce n'est pas simple d'être parfois sur tous les fronts en même temps! </li>
+</ul>
+
+<p>
+Le testeur est donc aidé dans son rôle et devient un <strong>facilitateur clé</strong> entre le besoin et la solution.
+</p>
+
+<!-- retour -->
+<a href="../index.html" style="display:block; margin-top:20px; color:blue;">
+⬅ Retour à l'accueil
+</a>
+
+</body>
+</html>
