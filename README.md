@@ -1,25 +1,23 @@
-# QA Automation Demo
+# Projet PORTFOLIO professionnel AURELIA LECLERC QA
 
 ## 📌 Description
-Projet de démonstration d’un framework d’automatisation des tests mettant en avant :
-- des scénarios métier réalistes
-- une structure propre et maintenable
-- une approche orientée client
+Projet de démonstration d’un framework d’automatisation des tests:
+- Des applications de test originaux
+- Des scénarios métier réalistes
+- Une structure propre et maintenable: idéale pour la mise en place d'un socle d'automatisation
+- Une stratégie d'automatisation
+
 
 ## 🛠️ Stack technique
-- Playwright
-- TypeScript
-- GitHub Actions (CI/CD)
+- RobotFramework
+- IA
 
 ## 🚀 Objectifs
-- démontrer une expertise en automatisation
-- illustrer une approche structurée des tests
-- simuler un contexte projet réel
+- Démontrer une expertise en automatisation
+- Simuler un contexte projet réel
 
-## 🌐 Demo
-Lien vers l'application : (à ajouter avec GitHub Pages)
+## 🌐 Portfolio
+Lien vers le portfolio qui heberge les applications et leurs tests : [AureliaLeclercQA](https://aurelialeclercqa.github.io/)
 
-## ▶️ Lancer les tests
-```bash
-npm install
-npx playwright test
+## ▶️ Lancement des tests
+à venir
