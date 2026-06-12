@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>QApipotron</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      padding-top: 90px;
+      background: rgb(255, 255, 255);
+      text-align: center;
+    }
+
+    h1 {
+      position: absolute;
+      top: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .options {
+      display: none;
+      text-align: left;
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 15px;
+      border: 2px solid #e5e7eb;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .options ul {
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .result {
+      font-size: 1.5rem;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      border: 4px solid #f163e0;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #f163cb;
+      color: white;
+    }
+
+    button:hover {
+      background: #b71e9b;
+    }
+
+    .home {
+      position: absolute;
+      bottom: 20px;
+      text-decoration: none;
+      background: #f3f4f6;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🗣️ QApipotron 🗣️</h1>
+
+<div class="container">
+  <div class="result" id="result">Préparez-vous, je vais avoir l'air intelligent !</div>
+
+  <button onclick="generatePhrase()">Générer une phrase QA</button>
+  <button onclick="toggleOptions()" id="toggleOptionsBtn">Afficher les options</button>
+
+  <div class="options" id="options">
+    <h2>Options de construction</h2>
+    <div><strong>Intro :</strong>
+      <ul id="introOptions"></ul>
+    </div>
+    <div><strong>Action :</strong>
+      <ul id="actionOptions"></ul>
+    </div>
+    <div><strong>Cible :</strong>
+      <ul id="cibleOptions"></ul>
+    </div>
+    <div><strong>Bonus :</strong>
+      <ul id="bonusOptions"></ul>
+    </div>
+  </div>
+</div>
+
+  <!-- retour -->
+  <a href="../index.html" style="display:block; margin-top:20px; color:blue;">
+  ⬅ Retour à l'accueil
+  </a>
+
+<script>
+const intro = [
+  "Au vu de la complexité du projet",
+  "Compte tenu de la criticité métier",
+  "Dans une démarche orientée qualité",
+  "Suite aux anomalies détectées",
+  "En prenant en compte la dette technique",
+  "Considérant les contraintes actuelles",
+  "Dans le contexte de la mise en production"
+];
+
+const action = [
+  "il serait préférable de",
+  "il est recommandé de",
+  "il semble pertinent de",
+  "il convient de",
+  "il est nécessaire de",
+  "il devient impératif de",
+  "il serait judicieux de"
+];
+
+const cible = [
+  "renforcer les tests bout en bout",
+  "mettre en place une stratégie de tests automatisés",
+  "toujours améliorer la couverture de tests",
+  "stabiliser l'environnement de recette",
+  "revoir le plan de validation",
+  "prioriser les scénarios critiques métier",
+  "toujours implémenter des tests basés sur le risque",
+  "systematiquement optimiser les tests de non-régression",
+  "fiabiliser les jeux de données",
+  "mettre en place du monitoring en production"
+];
+
+const bonus = [
+  "afin de garantir la qualité globale",
+  "pour limiter les risques en production",
+  "dans une logique d'amélioration continue",
+  "afin d'assurer la stabilité du système",
+  "pour anticiper les régressions",
+  "dans une optique de sécurisation du delivery",
+  "afin de gagner en robustesse"
+];
+
+function generatePhrase() {
+  const i = intro[Math.floor(Math.random() * intro.length)];
+  const a = action[Math.floor(Math.random() * action.length)];
+  const c = cible[Math.floor(Math.random() * cible.length)];
+  const b = bonus[Math.floor(Math.random() * bonus.length)];
+
+  const sentence = `${i}, ${a} ${c} ${b}.`;
+  document.getElementById("result").textContent = sentence;
+}
+
+function displayOptions() {
+  const fillList = (id, items) => {
+    document.getElementById(id).innerHTML = items.map(item => `<li>${item}</li>`).join("");
+  };
+
+  fillList("introOptions", intro);
+  fillList("actionOptions", action);
+  fillList("cibleOptions", cible);
+  fillList("bonusOptions", bonus);
+}
+
+
+function toggleOptions() {
+  const options = document.getElementById("options");
+  const button = document.getElementById("toggleOptionsBtn");
+  if (options.style.display === "none") {
+    displayOptions();
+    options.style.display = "block";
+    button.textContent = "Masquer les options";
+  } else {
+    options.style.display = "none";
+    button.textContent = "Afficher les options";
+  }
+}
+</script>
+
+</body>
+</html>
