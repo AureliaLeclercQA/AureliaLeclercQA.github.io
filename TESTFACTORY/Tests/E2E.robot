@@ -34,7 +34,7 @@ E2E - Test App Guest
     [Documentation]    This test case verifies that the App Guest is launched successfully and do minimal verification.
     AppGuest.Go To App Guest
     AppGuest.Verify App Guest Loaded
-    AppGuest.Add Guest Name    ${name1}
+    AppGuest.Add Guest Name    ${name1}    ${name2}    ${name3}
 
 
 
