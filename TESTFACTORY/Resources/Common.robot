@@ -1,23 +1,31 @@
 *** Settings ***
 Library     SeleniumLibrary
-Library     ExcelLibrary
 Library     BuiltIn    
 
 
-
 *** Variables ***
-${START_URL} =      https://cortexia.innovation-factory.io/
-${BROWSER}=    chrome    #edge, firefox
-#${RESULTS_DIR} =    ./Results
-#${HEADLESS}=    ${HEADLESS}
+${BROWSER}        chrome
+${PORTFOLIO_URL}  https://aurelialeclercqa.github.io/
+${RESULTS_DIR} =    ./Results
 
 *** Keywords ***
-Begin Web Test
-    Open Browser   about:blank  ${BROWSER}    alias=main_window
+
+Open Portfolio
+    Open Browser    ${PORTFOLIO_URL}    ${BROWSER}
     Maximize Browser Window
-    Go To                       ${START_URL}
+    Wait Until Page Contains    Aurelia Leclerc QA    timeout=10s
+
+Verify Portfolio Loaded
+    Location Should Be    ${PORTFOLIO_URL}
+
+Begin Web Test
+    Open Portfolio
+    Verify Portfolio Loaded
     Log    Browser: ${BROWSER} 
-    Log    Url: ${START_URL}
+    Log    Url: ${PORTFOLIO_URL}
 
 End Web Test
     Close Browser
+
+
+
