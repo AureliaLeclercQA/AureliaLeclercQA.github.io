@@ -1,0 +1,7 @@
+{
+"robotcode.robot.paths": [ "TESTFACTORY/Tests"],
+"robotcode.robot.args": [
+  "--outputdir",
+  "TESTFACTORY/Results"
+]
+}

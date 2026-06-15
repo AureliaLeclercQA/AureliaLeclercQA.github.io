@@ -35,7 +35,7 @@ E2E - Test App Guest
     AppGuest.Go To App Guest
     AppGuest.Verify App Guest Loaded
     AppGuest.Add Guest Name    ${name1}    ${name2}    ${name3}
-
+    AppGuest.Check Guest List    ${name1}    ${name2}    ${name3}
 
 
 
