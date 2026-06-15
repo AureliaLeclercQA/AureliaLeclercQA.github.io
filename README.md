@@ -20,4 +20,4 @@ Projet de démonstration d’un framework d’automatisation des tests:
 Lien vers le portfolio qui heberge les applications et leurs tests : [AureliaLeclercQA](https://aurelialeclercqa.github.io/)
 
 ## ▶️ Lancement des tests
-à venir
+Installer l'extension VSCODE: RobotCode - The Ultimate Robot Framework Toolset. Ne pas hesiter à redémarrer VSCODE pour prendre en compte tout les changements.
