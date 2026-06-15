@@ -45,12 +45,48 @@
             display: none;
             margin-top: 10px;
         }
+
+        
+        .toggle-btn {
+          width: 100%;
+          text-align: left;
+          padding: 12px;
+          font-size: 16px;
+          border: none;
+          background-color: #f3f4f6;
+          cursor: pointer;
+          border-radius: 8px;
+          margin-top: 10px;
+          transition: background 0.3s;
+        }
+
+        .toggle-btn:hover {
+          background-color: #e5e7eb;
+        }
+
+        .content {
+          padding: 10px;
+          margin-top: 5px;
+          border-left: 3px solid #6366f1;
+        }
+
+        .hidden {
+          display: none;
+        }
     </style>
 </head>
 <body>
 
 <h1>🧠 La place de l'IA dans les tests automatisés et fonctionnels </h1>
 
+
+<!----------------------------------------------------------->
+<button class="toggle-btn" onclick="toggleContent('ia-fonctionnels')">
+  🧠/⚙️ La place de l’IA dans les tests fonctionnels
+</button>
+
+
+<div id="ia-fonctionnels" class="content hidden">
 <p>
 L’IA transforme progressivement les pratiques de test logiciel.
 Au-delà de l’automatisation classique, elle permet aujourd’hui de <strong>générer rapidement des maquettes interactives</strong>
@@ -230,11 +266,42 @@ Elle permet aussi de :
 <p>
 Le testeur est donc aidé dans son rôle et devient un <strong>facilitateur clé</strong> entre le besoin et la solution.
 </p>
+</div>
+<!----------------------------------------------------------->
+
+
+<!-- IA Tests Automatisés -->
+<button class="toggle-btn" onclick="toggleContent('ia-auto')">
+  🧠/🤖 La place de l'IA dans l'automatisation des tests (Copilot / VSCode)
+</button>
+
+<div id="ia-auto" class="content hidden">
+  <p> 🚧 Bientôt ici! 🚧
+    <ul>
+        <li> Utilisation de Copilot dans VSCode 🤖. </li>
+        <li> Aide à la structuration de projet via Copilot. </li>
+        <li> Mon retour d'expérience sur l'intégration de l'IA dans le workflow d'automatisation. </li>
+    </ul>
+  </p>
+</div>
+
+<!----------------------------------------------------------->
+
 
 <!-- retour -->
 <a href="../index.html" style="display:block; margin-top:20px; color:blue;">
 ⬅ Retour à l'accueil
 </a>
+
+
+<script>
+function toggleContent(id) {
+  const element = document.getElementById(id);
+  element.classList.toggle("hidden");
+}
+</script>
+
+
 
 </body>
 </html>
