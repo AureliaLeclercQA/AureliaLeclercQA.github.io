@@ -141,7 +141,8 @@
   
   <button class="toggle-btn" onclick="toggleContent('Mon profil')">
   <h1>Aurelia Leclerc QA</h1>
-  <h4>(Cliquez pour voir mon profil)</h4>
+  <h4 id="toggle-text">(Cliquez pour voir mon profil)</h4>
+
   </button>
 
   <div id="Mon profil" class="content hidden">
@@ -247,6 +248,12 @@
 <script>
 function toggleContent(id) {
   const element = document.getElementById(id);
+  const toggleText = document.getElementById('toggle-text');
   element.classList.toggle("hidden");
+  if (element.classList.contains("hidden")) {
+    toggleText.textContent = "(Cliquez pour voir mon profil)";
+  } else {
+    toggleText.textContent = "(Cliquez pour fermer mon profil)";
+  }
 }
 </script>
