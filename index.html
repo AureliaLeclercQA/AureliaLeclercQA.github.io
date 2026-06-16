@@ -71,6 +71,12 @@
       margin: 10px;
     }
 
+    h4 {
+      font-style: italic;
+      color: #de2b2b;
+      font-size: 12px;
+    }
+
     .card.disabled {
       background-color: #e5e7eb;
       color: #9ca3af;
@@ -82,6 +88,35 @@
       transform: none;
       background-color: #e5e7eb;
     }
+
+    .toggle-btn {
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      background-color: #e1a3dc;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-top: 10px;
+      transition: background 0.3s;
+    
+    .toggle-btn:hover {
+      background-color: #e5e7eb;
+    
+    .toggle-btn h1 {
+      margin: 0;
+    
+    .content {
+      padding: 10px;
+      margin-top: 5px;
+      border-left: 3px solid #6366f1;
+    
+    .hidden {
+      display: none;
+    }
+
+
   </style>
 </head>
 
@@ -90,9 +125,32 @@
 <!-- HEADER -->
 <header>
   <img src="./sources/logo_github.png" alt="logo"> 
+  
+  <button class="toggle-btn" onclick="toggleContent('Mon profil')">
   <h1>Aurelia Leclerc QA</h1>
-  <h2>~ PORTFOLIO ~</h2>
+  <h4>(Cliquez pour voir mon profil)</h4>
+  </button>
 
+  <div id="Mon profil" class="content hidden">
+    🎓 Parcours & Formation
+    <p> Après avoir obtenu mon diplôme en physique fondamentale, où j'ai acquis une solide formation dans des domaines variés tels que l’optique, le nucléaire, et l’électronique, j'ai poursuivi mes études en effectuant une thèse en astrophysique. ✨
+    Cette expérience m'a permis de développer des compétences avancées en programmation💻, en analyse de données 📊, ainsi que des compétences transversales telles que la rédaction✍️, la communication🗣️ et la gestion de projet📌.
+    </p>
+
+    <br>
+    🔄 Transition vers le test logiciel
+    <p>La transition vers le domaine du test logiciel découle naturellement de mon expérience antérieure, où j'ai été amenée à testermon travail à toutes ses étapes, à analyseret résoudredes problèmes complexes 🧩.
+    Cette reconversion reflète ma curiosité naturelle 🔍 et mon attrait pour les aspects techniques et fonctionnels⚙️, avec un attrait particulier pour le domaine de l'automatisation🤖.
+    </p>
+
+    <br>
+    📁 À propos de ce portfolio
+    <p>Cette vitrine sert à mettre en avant mes compétences en test logiciel 🧪, en automatisation 🤖 et sert de réceptacle à mes réflexions sur l'IA 🧠.
+    C'est aussi un petit terrain de jeu 🎯 qui me permet de réviser constamment de nouvelles technos d'automatisation.
+    Ce projet sur GitHub démontre également ma capacité à structurer un projet de test automatisé, ainsi que mes compétences techniques en gestion d'outils pour les tests (GIT, VSCode, RobotFramework, HTML, JS, etc. 💻).
+    </p>
+  </div>
+  <h2>~ PORTFOLIO ~</h2>
 
   <nav>
     <a href="https://github.com/AureliaLeclercQA">GitHub</a>
@@ -171,3 +229,10 @@
   <h2>🧠 La place de l'IA dans les tests automatisés et fonctionnels </h2>
   <div class="card" onclick="window.location.href='./pages/placeIA.html'"> Voir l'article </div>
 </div>
+
+<script>
+function toggleContent(id) {
+  const element = document.getElementById(id);
+  element.classList.toggle("hidden");
+}
+</script>
