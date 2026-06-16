@@ -71,19 +71,37 @@
       margin: 10px;
     }
 
-    h4 {
+    .toggle-btn:hover {
+      background-color: #e5e7eb;
+    }
+
+    /* reduce space between h1 and h4 inside the toggle button */
+    .toggle-btn h1 {
+      margin: 6px 0 2px 0;
+      line-height: 1.1;
+      font-size: 20px;
+    }
+
+    .toggle-btn h4 {
+      margin: 0 0 6px 0;
+      font-size: 12px;
       font-style: italic;
       color: #de2b2b;
-      font-size: 12px;
     }
 
-    .card.disabled {
-      background-color: #e5e7eb;
-      color: #9ca3af;
-      cursor: not-allowed;
-      position: relative;
+    .content {
+      padding: 10px;
+      margin-top: 5px;
+      border-left: 3px solid #b70052;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
     }
 
+    .hidden {
+      display: none;
+    }
     .card.disabled:hover {
       transform: none;
       background-color: #e5e7eb;
@@ -100,17 +118,12 @@
       border-radius: 8px;
       margin-top: 10px;
       transition: background 0.3s;
-    
+      
     .toggle-btn:hover {
       background-color: #e5e7eb;
     
     .toggle-btn h1 {
       margin: 0;
-    
-    .content {
-      padding: 10px;
-      margin-top: 5px;
-      border-left: 3px solid #6366f1;
     
     .hidden {
       display: none;
@@ -132,20 +145,21 @@
   </button>
 
   <div id="Mon profil" class="content hidden">
+
     🎓 Parcours & Formation
-    <p> Après avoir obtenu mon diplôme en physique fondamentale, où j'ai acquis une solide formation dans des domaines variés tels que l’optique, le nucléaire, et l’électronique, j'ai poursuivi mes études en effectuant une thèse en astrophysique. ✨
+    <p> Après avoir obtenu mon diplôme en physique fondamentale, où j'ai acquis une solide formation dans des domaines variés tels que l’optique, le nucléaire, et l’électronique, j'ai poursuivi mes études en effectuant une thèse en astrophysique ✨. 
     Cette expérience m'a permis de développer des compétences avancées en programmation💻, en analyse de données 📊, ainsi que des compétences transversales telles que la rédaction✍️, la communication🗣️ et la gestion de projet📌.
     </p>
 
     <br>
     🔄 Transition vers le test logiciel
-    <p>La transition vers le domaine du test logiciel découle naturellement de mon expérience antérieure, où j'ai été amenée à testermon travail à toutes ses étapes, à analyseret résoudredes problèmes complexes 🧩.
+    <p>La transition vers le domaine du test logiciel découle naturellement de mon expérience antérieure, où j'ai été amenée à tester mon travail à toutes ses étapes, à analyser et résoudre des problèmes complexes 🧩.
     Cette reconversion reflète ma curiosité naturelle 🔍 et mon attrait pour les aspects techniques et fonctionnels⚙️, avec un attrait particulier pour le domaine de l'automatisation🤖.
     </p>
 
     <br>
     📁 À propos de ce portfolio
-    <p>Cette vitrine sert à mettre en avant mes compétences en test logiciel 🧪, en automatisation 🤖 et sert de réceptacle à mes réflexions sur l'IA 🧠.
+    <p>Cette vitrine sert à mettre en avant mes compétences en test logiciel, en automatisation 🤖 et sert de réceptacle à mes réflexions sur l'IA 🧠.
     C'est aussi un petit terrain de jeu 🎯 qui me permet de réviser constamment de nouvelles technos d'automatisation.
     Ce projet sur GitHub démontre également ma capacité à structurer un projet de test automatisé, ainsi que mes compétences techniques en gestion d'outils pour les tests (GIT, VSCode, RobotFramework, HTML, JS, etc. 💻).
     </p>
