@@ -16,11 +16,14 @@ Test Teardown       Common.End Web Test
 
 *** Variables ***
 
-
-*** Test Cases ***
+*** Keywords ***
 app dede is launched
     AppDede.Go To App Dede
     AppDede.Verify app Dede Loaded
+
+
+*** Test Cases ***
+
 
 TNR Test Guest App
     [Tags]  TNR
@@ -28,7 +31,7 @@ TNR Test Guest App
     Verify App Guest Loaded
     Add Guest Name    Lea    Leon    Sasha
 
-TNR - Test App Dede
+TNR - Test App Dede - statistical checks
     [Documentation]    Warning: N>60 ! This test case verifies that the App Dede is launched and do statistical verification of the results of 10 rolls of the dice.
     app dede is launched
     Test Dice    1000
