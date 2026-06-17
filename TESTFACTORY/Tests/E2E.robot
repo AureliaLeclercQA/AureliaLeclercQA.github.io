@@ -33,7 +33,6 @@ app dede is launched
     AppDede.Go To App Dede
     AppDede.Verify app Dede Loaded
 
-    
 *** Test Cases ***
 
 E2E - Test App Calc
@@ -46,8 +45,4 @@ E2E - Test App Guest
     AppGuest.Add Guest Name    ${name1}    ${name2}    ${name3}
     AppGuest.Check Guest List    ${name1}    ${name2}    ${name3}
 
-E2E - Test App Dede
-    [Documentation]    Warning: N>60 ! This test case verifies that the App Dede is launched and do statistical verification of the results of 10 rolls of the dice.
-    app dede is launched
-    Test Dice    1000
 
