@@ -24,14 +24,15 @@ app dede is launched
 
 *** Test Cases ***
 
-
-TNR Test Guest App
+TNR - Ajouter un invité simple
     [Tags]  TNR
-    Go To App Guest
-    Verify App Guest Loaded
-    Add Guest Name    Lea    Leon    Sasha
+    App Guest Is Launched
+    Input Text    ${INPUT_NAME}    Alice
+    Click Element    ${BTN_ADD}
+    Wait Until Page Contains    Alice
 
 TNR - Test App Dede - statistical checks
     [Documentation]    Warning: N>60 ! This test case verifies that the App Dede is launched and do statistical verification of the results of 10 rolls of the dice.
     app dede is launched
     Test Dice    1000
+

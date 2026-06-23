@@ -1,185 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.9 on win32)" generated="2026-06-15T16:02:58.549403" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.11.9 on win32)" generated="2026-06-23T11:37:17.719228" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="C:\Users\aulecler\OneDrive-Capgemini\OneDrive - Capgemini\Documents\VitrineClientSOGETI\AureliaLeclercQA.github.io\TESTFACTORY\Tests">
 <suite id="s1-s1" name="E2E" source="C:\Users\aulecler\OneDrive-Capgemini\OneDrive - Capgemini\Documents\VitrineClientSOGETI\AureliaLeclercQA.github.io\TESTFACTORY\Tests\E2E.robot">
-<test id="s1-s1-t1" name="E2E - Test App Guest" line="33">
+<test id="s1-s1-t1" name="E2E - Test Guest App" line="38">
 <kw name="Begin Web Test" owner="Common" type="SETUP">
 <kw name="Setup Selenium" owner="Common">
 <kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:02:59.381469" level="INFO">Custom Screenshot will be run on failure.</msg>
+<msg time="2026-06-23T11:37:19.937188" level="INFO">Custom Screenshot will be run on failure.</msg>
 <arg>Custom Screenshot</arg>
 <doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
-<status status="PASS" start="2026-06-15T16:02:59.381469" elapsed="0.000997"/>
+<status status="PASS" start="2026-06-23T11:37:19.937188" elapsed="0.001033"/>
 </kw>
-<status status="PASS" start="2026-06-15T16:02:59.379464" elapsed="0.014064"/>
+<status status="PASS" start="2026-06-23T11:37:19.935875" elapsed="0.002346"/>
 </kw>
 <kw name="Open Portfolio" owner="Common">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:02:59.395537" level="INFO">Opening browser 'chrome' to base url 'https://aurelialeclercqa.github.io/'.</msg>
+<msg time="2026-06-23T11:37:19.940219" level="INFO">Opening browser 'chrome' to base url 'https://aurelialeclercqa.github.io/'.</msg>
 <arg>${PORTFOLIO_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-06-15T16:02:59.395537" elapsed="7.272953"/>
+<status status="PASS" start="2026-06-23T11:37:19.939218" elapsed="9.616901"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-06-15T16:03:06.668490" elapsed="0.769882"/>
+<status status="PASS" start="2026-06-23T11:37:29.558127" elapsed="0.056092"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Aurelia Leclerc QA</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-15T16:03:07.438372" elapsed="0.154406"/>
+<status status="PASS" start="2026-06-23T11:37:29.615219" elapsed="0.068140"/>
 </kw>
-<status status="PASS" start="2026-06-15T16:02:59.394541" elapsed="8.199777"/>
+<status status="PASS" start="2026-06-23T11:37:19.938221" elapsed="9.745138"/>
 </kw>
 <kw name="Verify Portfolio Loaded" owner="Common">
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:07.688532" level="INFO">Current location is 'https://aurelialeclercqa.github.io/'.</msg>
+<msg time="2026-06-23T11:37:29.719595" level="INFO">Current location is 'https://aurelialeclercqa.github.io/'.</msg>
 <arg>${PORTFOLIO_URL}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2026-06-15T16:03:07.630551" elapsed="0.058980"/>
+<status status="PASS" start="2026-06-23T11:37:29.685369" elapsed="0.035234"/>
 </kw>
-<status status="PASS" start="2026-06-15T16:03:07.596353" elapsed="0.093178"/>
+<status status="PASS" start="2026-06-23T11:37:29.683359" elapsed="0.037244"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-06-15T16:03:07.693045" level="INFO">Browser: chrome</msg>
+<msg time="2026-06-23T11:37:29.722592" level="INFO">Browser: chrome</msg>
 <arg>Browser: ${BROWSER}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-06-15T16:03:07.690531" elapsed="0.007088"/>
+<status status="PASS" start="2026-06-23T11:37:29.721591" elapsed="0.001001"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-06-15T16:03:07.706184" level="INFO">Url: https://aurelialeclercqa.github.io/</msg>
+<msg time="2026-06-23T11:37:29.724596" level="INFO">Url: https://aurelialeclercqa.github.io/</msg>
 <arg>Url: ${PORTFOLIO_URL}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-06-15T16:03:07.702171" elapsed="0.005007"/>
+<status status="PASS" start="2026-06-23T11:37:29.723596" elapsed="0.007094"/>
 </kw>
-<status status="PASS" start="2026-06-15T16:02:59.378462" elapsed="8.329717"/>
+<status status="PASS" start="2026-06-23T11:37:19.934902" elapsed="9.796803"/>
 </kw>
+<kw name="App Guest Is Launched" owner="AppGuest">
 <kw name="Go To App Guest" owner="AppGuest">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:07.732233" level="INFO">Clicking element 'xpath=//div[@id="app_guest"]'.</msg>
+<msg time="2026-06-23T11:37:29.737703" level="INFO">Clicking element 'id=app_guest'.</msg>
 <arg>${APP_GUEST}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T16:03:07.729235" elapsed="0.725454"/>
+<status status="PASS" start="2026-06-23T11:37:29.736701" elapsed="0.724758"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Ma liste d'invités</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-15T16:03:08.454689" elapsed="0.028537"/>
+<status status="PASS" start="2026-06-23T11:37:30.461459" elapsed="0.021896"/>
 </kw>
-<status status="PASS" start="2026-06-15T16:03:07.726237" elapsed="0.756989"/>
+<status status="PASS" start="2026-06-23T11:37:29.735708" elapsed="0.748648"/>
 </kw>
 <kw name="Verify App Guest Loaded" owner="AppGuest">
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:08.507330" level="INFO">Current location is 'https://aurelialeclercqa.github.io/pages/guest.html'.</msg>
-<arg>https://aurelialeclercqa.github.io/pages/guest.html</arg>
+<msg time="2026-06-23T11:37:30.500461" level="INFO">Current location is 'https://aurelialeclercqa.github.io/pages/guest.html'.</msg>
+<arg>${URL_GUEST}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2026-06-15T16:03:08.486229" elapsed="0.023071"/>
+<status status="PASS" start="2026-06-23T11:37:30.485362" elapsed="0.015099"/>
 </kw>
-<status status="PASS" start="2026-06-15T16:03:08.484235" elapsed="0.025065"/>
+<status status="PASS" start="2026-06-23T11:37:30.484356" elapsed="0.016105"/>
 </kw>
-<kw name="Add Guest Name" owner="AppGuest">
+<status status="PASS" start="2026-06-23T11:37:29.734704" elapsed="0.767767"/>
+</kw>
+<kw name="Add 3 Guests" owner="AppGuest">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:08.521822" level="INFO">Typing text 'Lou' into text field 'xpath=//input[@id="guest-name"]'.</msg>
-<arg>${guest_name_input}</arg>
+<msg time="2026-06-23T11:37:30.502471" level="INFO">Typing text 'Lea' into text field 'id=guest-name'.</msg>
+<arg>${INPUT_NAME}</arg>
 <arg>${guest_name1}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T16:03:08.519822" elapsed="0.242499"/>
+<status status="PASS" start="2026-06-23T11:37:30.502471" elapsed="0.179424"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:08.764321" level="INFO">Clicking element 'xpath=//button[@id="add-btn"]'.</msg>
-<arg>${add_guest_button}</arg>
+<msg time="2026-06-23T11:37:30.683903" level="INFO">Clicking element 'id=add-btn'.</msg>
+<arg>${BTN_ADD}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T16:03:08.763323" elapsed="0.127994"/>
+<status status="PASS" start="2026-06-23T11:37:30.681895" elapsed="0.106377"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:08.894315" level="INFO">Typing text 'Léo' into text field 'xpath=//input[@id="guest-name"]'.</msg>
-<arg>${guest_name_input}</arg>
+<msg time="2026-06-23T11:37:30.789272" level="INFO">Typing text 'Leon' into text field 'id=guest-name'.</msg>
+<arg>${INPUT_NAME}</arg>
 <arg>${guest_name2}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T16:03:08.892326" elapsed="0.126788"/>
+<status status="PASS" start="2026-06-23T11:37:30.788272" elapsed="0.113661"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:09.021084" level="INFO">Clicking element 'xpath=//input[@id="gender-male"]'.</msg>
-<arg>${gender_male_radio}</arg>
+<msg time="2026-06-23T11:37:30.903943" level="INFO">Clicking element 'id=gender-male'.</msg>
+<arg>${RADIO_MALE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T16:03:09.020083" elapsed="0.112647"/>
+<status status="PASS" start="2026-06-23T11:37:30.901933" elapsed="0.091228"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:09.134241" level="INFO">Clicking element 'xpath=//button[@id="add-btn"]'.</msg>
-<arg>${add_guest_button}</arg>
+<msg time="2026-06-23T11:37:30.993161" level="INFO">Clicking element 'id=add-btn'.</msg>
+<arg>${BTN_ADD}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T16:03:09.132730" elapsed="0.079868"/>
+<status status="PASS" start="2026-06-23T11:37:30.993161" elapsed="0.071137"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:09.213602" level="INFO">Typing text 'Léa' into text field 'xpath=//input[@id="guest-name"]'.</msg>
-<arg>${guest_name_input}</arg>
+<msg time="2026-06-23T11:37:31.065300" level="INFO">Typing text 'Sasha' into text field 'id=guest-name'.</msg>
+<arg>${INPUT_NAME}</arg>
 <arg>${guest_name3}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T16:03:09.212598" elapsed="0.128723"/>
+<status status="PASS" start="2026-06-23T11:37:31.064298" elapsed="0.103834"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:09.343320" level="INFO">Clicking element 'xpath=//input[@id="gender-female"]'.</msg>
-<arg>${gender_female_radio}</arg>
+<msg time="2026-06-23T11:37:31.170133" level="INFO">Clicking element 'id=gender-female'.</msg>
+<arg>${RADIO_FEMALE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T16:03:09.342317" elapsed="0.123183"/>
+<status status="PASS" start="2026-06-23T11:37:31.169134" elapsed="0.091552"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-15T16:03:09.468498" level="INFO">Clicking element 'xpath=//button[@id="add-btn"]'.</msg>
-<arg>${add_guest_button}</arg>
+<msg time="2026-06-23T11:37:31.262676" level="INFO">Clicking element 'id=add-btn'.</msg>
+<arg>${BTN_ADD}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T16:03:09.466501" elapsed="0.111108"/>
+<status status="PASS" start="2026-06-23T11:37:31.261671" elapsed="0.061219"/>
 </kw>
-<arg>${name1}</arg>
-<arg>${name2}</arg>
-<arg>${name3}</arg>
-<status status="PASS" start="2026-06-15T16:03:08.516825" elapsed="1.061780"/>
+<arg>Lea</arg>
+<arg>Leon</arg>
+<arg>Sasha</arg>
+<doc>Add 3 guests: gender neutral, male and female</doc>
+<status status="PASS" start="2026-06-23T11:37:30.502471" elapsed="0.821174"/>
 </kw>
-<kw name="Check Guest List" owner="AppGuest">
+<kw name="Check 3 Guests List" owner="AppGuest">
+<kw name="Guest Is In List" owner="AppGuest">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${name}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-23T11:37:31.327670" elapsed="0.030110"/>
+</kw>
 <arg>${guest_name1}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-15T16:03:09.580603" elapsed="0.019050"/>
+<status status="PASS" start="2026-06-23T11:37:31.326660" elapsed="0.031120"/>
 </kw>
+<kw name="Guest Is In List" owner="AppGuest">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${name}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-23T11:37:31.359251" elapsed="0.014070"/>
+</kw>
 <arg>${guest_name2}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-15T16:03:09.599653" elapsed="0.067753"/>
+<status status="PASS" start="2026-06-23T11:37:31.357780" elapsed="0.016541"/>
 </kw>
+<kw name="Guest Is In List" owner="AppGuest">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${guest_name3}</arg>
-<arg>timeout=5s</arg>
+<arg>${name}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-15T16:03:09.667406" elapsed="0.028533"/>
+<status status="PASS" start="2026-06-23T11:37:31.375319" elapsed="0.022863"/>
 </kw>
-<arg>${name1}</arg>
-<arg>${name2}</arg>
-<arg>${name3}</arg>
-<status status="PASS" start="2026-06-15T16:03:09.579604" elapsed="0.117335"/>
+<arg>${guest_name3}</arg>
+<status status="PASS" start="2026-06-23T11:37:31.374321" elapsed="0.023861"/>
+</kw>
+<arg>Lea</arg>
+<arg>Leon</arg>
+<arg>Sasha</arg>
+<status status="PASS" start="2026-06-23T11:37:31.324657" elapsed="0.073525"/>
 </kw>
 <kw name="End Web Test" owner="Common" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-06-15T16:03:09.698942" elapsed="2.680485"/>
+<status status="PASS" start="2026-06-23T11:37:31.398182" elapsed="2.553234"/>
 </kw>
-<status status="PASS" start="2026-06-15T16:03:09.697940" elapsed="2.681487"/>
+<status status="PASS" start="2026-06-23T11:37:31.398182" elapsed="2.553234"/>
 </kw>
 <doc>This test case verifies that the App Guest is launched successfully and do minimal verification.</doc>
-<status status="PASS" start="2026-06-15T16:02:59.373467" elapsed="13.007961"/>
+<tag>TNR</tag>
+<status status="PASS" start="2026-06-23T11:37:19.916233" elapsed="14.035183"/>
 </test>
-<status status="PASS" start="2026-06-15T16:02:58.666671" elapsed="13.727767"/>
+<status status="PASS" start="2026-06-23T11:37:17.809275" elapsed="16.149452"/>
 </suite>
-<status status="PASS" start="2026-06-15T16:02:58.579431" elapsed="13.828143"/>
+<status status="PASS" start="2026-06-23T11:37:17.734268" elapsed="16.230574"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">TNR</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
