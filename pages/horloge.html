@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Horloge Interactive</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: #f5f5f5;
+    }
+
+    .header {
+      background: #8e507d;
+      color: white;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .back-link {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .controls {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .control-group {
+      margin: 15px 0;
+    }
+
+    label {
+      display: inline-block;
+      margin-right: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    input[type="radio"] {
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .display-section {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Horloge Numérique */
+    .digital-clock {
+      font-size: 72px;
+      font-weight: bold;
+      color: #8e507d;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 5px;
+      margin: 20px 0;
+    }
+
+    /* Horloge Analogique (Cadran) */
+    .analog-clock {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: white;
+      border: 8px solid #8e507d;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .center-dot {
+      width: 12px;
+      height: 12px;
+      background: #8e507d;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+
+    .hand {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform-origin: bottom center;
+      background: #333;
+      border-radius: 10px;
+    }
+
+    .hour-hand {
+      width: 6px;
+      height: 80px;
+      margin-left: -3px;
+      background: #8e507d;
+    }
+
+    .minute-hand {
+      width: 4px;
+      height: 110px;
+      margin-left: -2px;
+      background: #333;
+    }
+
+    .second-hand {
+      width: 2px;
+      height: 120px;
+      margin-left: -1px;
+      background: #e91e63;
+    }
+
+    /* Marques du cadran */
+    .clock-face {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+    }
+
+    .number {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .number span {
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      top: 15px;
+      transform: translateX(-50%);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .digital-clock {
+        font-size: 48px;
+        letter-spacing: 3px;
+      }
+
+      .analog-clock {
+        width: 200px;
+        height: 200px;
+        border-width: 6px;
+      }
+
+      .number span {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>⏰ Horloge Interactive ⏰</h1>
+  </div>
+
+
+
+  
+  <div class="container">
+    
+    <!-- CONTROLS -->
+    <div class="controls">
+      <h3 style="margin-top: 0;">Personnalisez votre horloge</h3>
+      
+      <div class="control-group">
+        <label>
+          <input type="checkbox" id="showSeconds" checked> Afficher les secondes
+        </label>
+      </div>
+
+      <div class="control-group">
+        <label>Type d'horloge :</label>
+        <br>
+        <label style="display: inline-block; margin-top: 10px;">
+          <input type="radio" name="clockType" value="digital" checked> 🔢 Numérique
+        </label>
+        <label style="display: inline-block; margin-left: 20px;">
+          <input type="radio" name="clockType" value="analog"> ⏱️ Cadran
+        </label>
+      </div>
+    </div>
+
+    <!-- DISPLAY -->
+    <div class="display-section">
+      
+      <!-- Digital Clock -->
+      <div id="digitalDisplay" class="digital-clock"></div>
+
+      <!-- Analog Clock -->
+      <div id="analogDisplay" class="analog-clock hidden">
+        <div class="clock-face">
+          <div class="number" style="transform: rotate(0deg)"><span style="transform: rotate(0deg)">12</span></div>
+          <div class="number" style="transform: rotate(30deg)"><span style="transform: rotate(-30deg)">1</span></div>
+          <div class="number" style="transform: rotate(60deg)"><span style="transform: rotate(-60deg)">2</span></div>
+          <div class="number" style="transform: rotate(90deg)"><span style="transform: rotate(-90deg)">3</span></div>
+          <div class="number" style="transform: rotate(120deg)"><span style="transform: rotate(-120deg)">4</span></div>
+          <div class="number" style="transform: rotate(150deg)"><span style="transform: rotate(-150deg)">5</span></div>
+          <div class="number" style="transform: rotate(180deg)"><span style="transform: rotate(-180deg)">6</span></div>
+          <div class="number" style="transform: rotate(210deg)"><span style="transform: rotate(-210deg)">7</span></div>
+          <div class="number" style="transform: rotate(240deg)"><span style="transform: rotate(-240deg)">8</span></div>
+          <div class="number" style="transform: rotate(270deg)"><span style="transform: rotate(-270deg)">9</span></div>
+          <div class="number" style="transform: rotate(300deg)"><span style="transform: rotate(-300deg)">10</span></div>
+          <div class="number" style="transform: rotate(330deg)"><span style="transform: rotate(-330deg)">11</span></div>
+        </div>
+        <div class="hand hour-hand" id="hourHand"></div>
+        <div class="hand minute-hand" id="minuteHand"></div>
+        <div class="hand second-hand hidden" id="secondHand"></div>
+        <div class="center-dot"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- retour -->
+  <a href="../index.html" style="display:block; margin-top:20px; color:blue;">
+  ⬅ Retour à l'accueil
+  </a>
+
+  <script>
+    const showSecondsCheckbox = document.getElementById('showSeconds');
+    const clockTypeRadios = document.querySelectorAll('input[name="clockType"]');
+    const digitalDisplay = document.getElementById('digitalDisplay');
+    const analogDisplay = document.getElementById('analogDisplay');
+    const hourHand = document.getElementById('hourHand');
+    const minuteHand = document.getElementById('minuteHand');
+    const secondHand = document.getElementById('secondHand');
+
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const milliseconds = now.getMilliseconds();
+
+      const showSeconds = showSecondsCheckbox.checked;
+      
+      // Digital display
+      if (showSeconds) {
+        digitalDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+      } else {
+        digitalDisplay.textContent = `${hours}:${minutes}`;
+      }
+
+      // Analog display - smooth movement
+      const totalSeconds = hours * 3600 + minutes * 60 + seconds + milliseconds / 1000;
+      const hourAngle = (totalSeconds / 43200) * 360; // 12 hours in seconds
+      const minuteAngle = ((minutes * 60 + seconds + milliseconds / 1000) / 3600) * 360;
+      const secondAngle = ((seconds + milliseconds / 1000) / 60) * 360;
+
+      hourHand.style.transform = `rotate(${hourAngle}deg)`;
+      minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+      secondHand.style.transform = `rotate(${secondAngle}deg)`;
+
+      // Update second hand visibility
+      if (showSeconds) {
+        secondHand.classList.remove('hidden');
+      } else {
+        secondHand.classList.add('hidden');
+      }
+    }
+
+    // Update clock every 50ms for smooth second hand movement
+    setInterval(updateClock, 50);
+
+    // Initial update
+    updateClock();
+
+    // Handle clock type change
+    clockTypeRadios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (this.value === 'digital') {
+          digitalDisplay.classList.remove('hidden');
+          analogDisplay.classList.add('hidden');
+        } else {
+          digitalDisplay.classList.add('hidden');
+          analogDisplay.classList.remove('hidden');
+        }
+      });
+    });
+
+    // Handle seconds display change
+    showSecondsCheckbox.addEventListener('change', updateClock);
+  </script>
+
+</body>
+</html>

@@ -276,13 +276,67 @@ Le testeur est donc aidé dans son rôle et devient un <strong>facilitateur clé
 </button>
 
 <div id="ia-auto" class="content hidden">
-  <p> 🚧 Bientôt ici! 🚧
-    <ul>
-        <li> Utilisation de Copilot dans VSCode 🤖. </li>
-        <li> Aide à la structuration de projet via Copilot. </li>
-        <li> Mon retour d'expérience sur l'intégration de l'IA dans le workflow d'automatisation. </li>
-    </ul>
-  </p>
+  <p> 🚧 En cours! 🚧</p>
+  <ul>
+      <li> Utilisation de Copilot dans VSCode 🤖:
+        <p>
+            D'abord, il faut que VSCode soit à jour. 
+            <figure style="display:block; margin:12px 0;">
+                <img src="../sources/agentCopilotVscode.png" alt="Agent Copilot VSCode" style="max-width:100%;" />
+                <figcaption style="font-size:0.9em; color:#444;">Capture d'écran : Agent Copilot dans VSCode</figcaption>
+            </figure>
+            <!-- Capture -->
+            Ensuite il y a plusieurs façon d'utiliser l'IA:
+            <ul>
+                <li> Via le chat intégré: accès a la visualisation des dossiers, très pratique pour avoir un regard sur l'ossature du projet et par exemple demander l'ajout d'une page. Si l'ossature est déjà en place, l'IA reprère la logique et intègre les nouvelles fonctionnalités que l'on lui suggère, directement dans le projet.  
+                    Voici un exemple:
+                    <figure style="display:block; margin:12px 0;">
+                        <img src="../sources/copilotVueProjet.png" alt="Vue du projet dans Copilot" style="max-width:100%;" />
+                        <figcaption style="font-size:0.9em; color:#444;">Vue du projet affichée par Copilot avec la visualisation du prompt.</figcaption>
+                    </figure>
+
+                    <figure style="display:block; margin:12px 0;">
+                        <img src="../sources/CreationPagePrompt.png" alt="Prompt de création de page" style="max-width:100%;" />
+                        <figcaption style="font-size:0.9em; color:#444;">Prompt utilisé pour créer une nouvelle page et réponse du ma demande. Explications très claires de ce qui a été généré et pourquoi.</figcaption>
+                    </figure>
+
+                    <figure style="display:block; margin:12px 0;">
+                        <img src="../sources/CreationPageResult.png" alt="Résultat création page" style="max-width:100%;" />
+                        <figcaption style="font-size:0.9em; color:#444;">Visualisation du résultat directement dans VSCode avec en vert les lignes ajoutées et en rouge celles supprimées.</figcaption>
+                    </figure>
+
+
+
+                </li>
+                <li> Via les suggestions de code: on commence a taper et l'IA suggère la suite. 
+                    <figure style="display:block; margin:12px 0;">
+                        <img src="../sources/completion_ia.png" alt="Completion IA" style="max-width:100%;" />
+                        <figcaption style="font-size:0.9em; color:#444;">Complétion automatique par l'IA. </figcaption>
+                    </figure>
+                    L'IA reconnait ici que la fonction que l'on écrit ressemble à une fonction déjà écrite. La logique est comprise et le tout est complété. Si les variables pour la fonction manquent, elles peuvent même être crées. Cette aide rapide limite aussi les erreurs humaines du type noms de variable non logique par rapport au reste du projet (par exemple si on choisi que les variables sont toujours en majuscules) et erreurs de frappes, ce qui permet d'armoniser le projet. Attention: l'IA ne nous dira jamais si note test est pertinent! 
+                </li>
+                <li> Via les prompts dans le code: Ctrl+i 
+                    On peut aussi se placer dans un endroit du code et faire "Ctrl+i" pour demander à l'IA du code, le tout en langage naturel. Cela nous permet de lire le code en même temps et d'être dans une démarche active.
+                    <figure style="display:block; margin:12px 0;">
+                        <img src="../sources/ctrli_modif_page.png" alt="commande ctrl i" style="max-width:100%;" />
+                        <figcaption style="font-size:0.9em; color:#444;">Commande Ctrl+i et description de ce que l'on veut intégrer ou modifier dans cette partie du code. </figcaption>
+                    </figure>
+                    <figure style="display:block; margin:12px 0;">
+                        <img src="../sources/resultat_ctrl_i.png" alt="resultat ctrl i" style="max-width:100%;" />
+                        <figcaption style="font-size:0.9em; color:#444;">Visualisation des résultats. Ajouts en vert et suppressions en rouge. Possibilité de garder ou non la proposition. </figcaption>
+                    </figure>
+                </li>
+            </ul>
+            Bien sur, toutes ces actions sont couteuses en tokens, donc plus vite on comprend nous même la structure plus vite on peut en économiser. L'IA ne doit être vue que comme un accélérateur, et ne doit pas remplacer une lecture de code. Je me permet ici de faire du developpement car j'ai des bases en HTML/CSS et JS.
+        </p>
+      </li>
+      <li> Aide à la structuration de projet via Copilot: on peut mettre à l'épreuve notre structuration pour demander des améliorations. </li>
+      <li> Mon retour d'expérience sur l'intégration de l'IA dans le workflow d'automatisation:
+        <p>
+            Je vois l'IA comme une grande source de motivation. Fini les heures a aller chercher sur stack overflow les réponses à nos questions. Au lieu de visiter des dizaines de pages, l'IA le fait a notre place et nous synthetise ce qu'elle trouve, et fourni des explications. Ainsi, il est possible d'apprendre avec une IA, puisque si on prend le temps de lire, elle nous donne des explications claires sur ce qu'elle fait. Par contre, je ne sais pas a quel point cela est clair pour quelqu'un qui n'a jamais fait de code ou de structuration de projet de test sans assistance. Moi je vois un avantage réel: en une apres midi je fais un travail qui aurait pu me prendre plusieurs jours, me faire arracher les cheveux, me décourager. L'IA aide aussi lorsque l'on est en manque d'inspirations. Mais posons nous la question: si des sites comme stack overflow ne sont plus alimentés, alors où l'IA ira-t-elle piocher ses solutions inoventes? Nous sommes là typiquement dans un probleme qu'est la conservation de la connaissance. À suivre...
+        </p>
+      </li>
+  </ul>
 </div>
 
 <!----------------------------------------------------------->
