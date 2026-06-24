@@ -1,4 +1,4 @@
-# Projet PORTFOLIO professionnel AURELIA LECLERC QA
+# ❀°⋆.* Projet PORTFOLIO professionnel AURELIA LECLERC QA *.⋆°❀
 
 ## 📌 Description
 Ceci est un projet de démonstration d’un framework d’automatisation des tests qui comprend:
