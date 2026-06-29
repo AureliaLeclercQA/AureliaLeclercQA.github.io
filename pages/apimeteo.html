@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Météo</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      color: #8e507d;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 50px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      width: 80%;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #e1a3dc;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #d48acb;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🌦️ API Météo</h1>
+
+  <div class="container">
+    <p>Entrez une ville :</p>
+
+    <input type="text" id="city" placeholder="Ex: Marseille">
+    <button onclick="getWeather()">Afficher la météo</button>
+
+    <div id="result" class="result"></div>
+  </div>
+
+ <!-- retour -->
+  <a href="../index.html" style="display:block; margin-top:20px; color:blue;">
+  ⬅ Retour à l'accueil
+  </a>
+
+<!--- ⚠️ API key visible uniquement pour demo! -->
+<script>
+    const API_KEY = "0b3b63876efce7aed1df2a9077fdbbc2"; // my_meteo_key du site https://home.openweathermap.org/api_keys
+
+  function getWeather() {
+    const city = document.getElementById("city").value;
+    const resultDiv = document.getElementById("result");
+
+    if (!city) {
+      resultDiv.innerHTML = "<span class='error'>Veuillez entrer une ville</span>";
+      return;
+    }
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=fr`;
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Ville non trouvée ou erreur API");
+        }
+        return response.json();
+      })
+      .then(data => {
+        const temp = data.main.temp;
+        const desc = data.weather[0].description;
+
+        resultDiv.innerHTML = `
+          🌡 Température : <strong>${temp}°C</strong><br>
+          ☁️ Météo : <strong>${desc}</strong>
+        `;
+      })
+      .catch(error => {
+        resultDiv.innerHTML = `<span class='error'>${error.message}</span>`;
+      });
+  }
+</script>
+
+</body>
+</html>
